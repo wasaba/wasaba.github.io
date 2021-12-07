@@ -7,11 +7,6 @@ const btnLeft = document.getElementById("l");
 const btnRight = document.getElementById("r");
 
 btnLeft.addEventListener("click", () => {
-  if (!played) {
-    played = true;
-    audio = new Audio("villa.mp3");
-    audio.play();
-  }
   if (actInd > 0) {
     actInd--;
     for (const elem of all) {
@@ -22,6 +17,12 @@ btnLeft.addEventListener("click", () => {
 });
 
 btnRight.addEventListener("click", () => {
+  if (!played) {
+    played = true;
+    audio = new Audio("villa.mp3");
+    audio.play();
+    audio.volume = 0.3;
+  }
   if (actInd < all.length - 1) {
     actInd++;
   } else {
